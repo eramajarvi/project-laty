@@ -10,6 +10,9 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <PackageCertificateThumbprint>90335238B61A650552D52930E0D343343C505B7C</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>project-laty_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
 
   <ItemGroup>

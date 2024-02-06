@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     mc:Ignorable="d">
 
     <Window.SystemBackdrop>
@@ -30,7 +31,7 @@
         <ScrollViewer Margin="0,24,0,0">
             <StackPanel Margin="16,12,16,12">
 
-                <StackPanel Margin="0,0,0,-36" Orientation="Horizontal">
+                <StackPanel Margin="0,0,0,36" Orientation="Horizontal">
 
                     <Border x:Name="Frame" BorderBrush="Black" BorderThickness="4" CornerRadius="4" Width="144" Margin="16" VerticalAlignment="Center">
                         <Border.Background>
@@ -47,8 +48,81 @@
 
                 </StackPanel>
 
+                <StackPanel>
+                    <controls:SettingsExpander IsExpanded="False"
+                           Header="System Properties"
+                           HeaderIcon="{ui:FontIcon Glyph=&#xEEA1;}"
+                           x:Uid="SystemProperties">
 
-                
+                        <controls:SettingsExpander.Items>
+                            <controls:SettingsCard>
+                                <StackPanel Padding="16" Spacing="12">
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Processor"/>
+                                        <TextBlock x:Name="CPU" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Memory"/>
+                                        <TextBlock x:Name="RAM" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Storage"/>
+                                        <TextBlock x:Name="Disk" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Graphics"/>
+                                        <TextBlock x:Name="GPU" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Display"/>
+                                        <TextBlock x:Name="Screen" TextAlignment="Right"/>
+                                    </Grid>
+                                </StackPanel>
+                            </controls:SettingsCard>
+                            
+                            
+                        </controls:SettingsExpander.Items>
+
+                    </controls:SettingsExpander>
+
+                    <controls:SettingsExpander IsExpanded="False"
+                            Header="About Windows"
+                            HeaderIcon="{ui:FontIcon Glyph=&#xF1AD;}"
+                            x:Uid="AboutWindows">
+
+                        <controls:SettingsExpander.Items>
+                            <controls:SettingsCard>
+                                <StackPanel Padding="16" Spacing="12">
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}"  x:Uid="Edition"/>
+                                        <TextBlock x:Name="WindowsEdition" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Version"/>
+                                        <TextBlock x:Name="WindowsVersion" TextAlignment="Right"/>
+                                    </Grid>
+
+                                    <Grid>
+                                        <TextBlock Foreground="{ThemeResource TextFillColorSecondary}" x:Uid="Build"/>
+                                        <TextBlock x:Name="WindowsRevision" TextAlignment="Right"/>
+                                    </Grid>
+                                </StackPanel>
+                            </controls:SettingsCard>
+                        </controls:SettingsExpander.Items>
+
+                    </controls:SettingsExpander>
+
+                    <controls:SettingsExpander IsExpanded="False"
+                            Header="System Properties"
+                            HeaderIcon="{ui:FontIcon Glyph=&#xEEA1;}">
+
+                    </controls:SettingsExpander>
+                </StackPanel>
 
             </StackPanel>
         </ScrollViewer>

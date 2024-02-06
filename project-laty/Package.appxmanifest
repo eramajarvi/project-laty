@@ -9,14 +9,14 @@
 
   <Identity
     Name="2d7a809f-33ec-469c-afdc-46bf900c285b"
-    Publisher="CN=james"
-    Version="1.0.0.0" />
+    Publisher="CN=eramajarvi"
+    Version="0.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="2d7a809f-33ec-469c-afdc-46bf900c285b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>project-laty</DisplayName>
-    <PublisherDisplayName>james</PublisherDisplayName>
+    <PublisherDisplayName>eramajarvi</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

@@ -45,7 +45,7 @@ namespace project_laty
             var DisplayBounds = Display.OuterBounds;
             var DisplayHeight = DisplayBounds.Height;
             var DisplayWidth = DisplayBounds.Width;
-            // Screen.Text = DisplayWidth.ToString() + " x " + DisplayHeight.ToString();
+            Screen.Text = DisplayWidth.ToString() + " x " + DisplayHeight.ToString();
 
             //get wallpaper
             string UserFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -83,14 +83,14 @@ namespace project_laty
             ulong Version = ulong.Parse(DeviceFamilyVersion);
             ulong Build = (Version & 0x00000000FFFF0000L) >> 16;
             ulong Revision = (Version & 0x000000000000FFFFL);
-            //WindowsRevision.Text = ($"{Build}.{Revision}");
+            WindowsRevision.Text = ($"{Build}.{Revision}");
 
             var WindowsInfoKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
-            //WindowsVersion.Text = (WindowsInfoKey.GetValue("DisplayVersion").ToString());
+            WindowsVersion.Text = (WindowsInfoKey.GetValue("DisplayVersion").ToString());
 
             string Windows = (WindowsInfoKey.GetValue("ProductName").ToString());
             OSVersion.Text = Windows;
-            //WindowsEdition.Text = Windows;
+            WindowsEdition.Text = Windows;
 
             if (Build > 21995)
             {
@@ -101,7 +101,7 @@ namespace project_laty
 
             //processor
             var ProcessorInfo = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0\");
-            //CPU.Text = (ProcessorInfo.GetValue("ProcessorNameString").ToString());
+            CPU.Text = (ProcessorInfo.GetValue("ProcessorNameString").ToString());
 
             //memory
             ManagementObjectSearcher MemoryInfo = new ManagementObjectSearcher(@"select * from Win32_OperatingSystem");
@@ -113,7 +113,7 @@ namespace project_laty
                 Memory = Result["TotalVisibleMemorySize"].ToString();
                 float MemoryInKB = Int32.Parse(Memory);
                 double MemoryInGB = MemoryInKB / 1048576;
-                //RAM.Text = MemoryInGB.ToString("F1") + " GB";
+                RAM.Text = MemoryInGB.ToString("F1") + " GB";
             }
 
             //storage
@@ -127,7 +127,7 @@ namespace project_laty
                     Storage = drive.TotalSize.ToString();
                     float StorageInKB = Int64.Parse(Storage);
                     double StorageInGB = StorageInKB / 1073741824;
-                    //Disk.Text = StorageInGB.ToString("F1") + " GB";
+                    Disk.Text = StorageInGB.ToString("F1") + " GB";
                 }
             }
 
@@ -141,13 +141,13 @@ namespace project_laty
                 if ((String)Result["DeviceID"] == "VideoController1")
                 {
                     Graphics = Result["Description"].ToString();
-                    //GPU.Text = Graphics;
+                    GPU.Text = Graphics;
                 }
 
                 if ((String)Result["DeviceID"] == "VideoController2")
                 {
                     Graphics = Result["Description"].ToString();
-                    //GPU.Text = Graphics;
+                    GPU.Text = Graphics;
                 }
 
             }
